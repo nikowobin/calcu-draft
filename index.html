@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? ❤️</title>
+    <style>
+        body { 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+            background-color: #ffe6e6; 
+            padding: 20px; 
+        }
+        h1 { 
+            color: red; 
+            font-size: 36px; 
+        }
+        p { 
+            font-size: 20px; 
+            color: #333; 
+        }
+        .heart {
+            width: 100px;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .yes-btn:hover {
+            background-color: #ff1a1a;
+        }
+        .fake-no-btn {
+            background-color: #ffcccb;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Apology Page -->
+    <div id="apologyPage">
+        <h1>I'm Sorry, Boo </h1>
+        <img class="heart" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Red_heart_icon.svg/1024px-Red_heart_icon.svg.png" alt="Heart">
+        <div class="message-box">
+            <p>Hi, baby ,</p>
+            <p>im sowii :( , miss k na ng baby boo mo (me) </p>
+            <p>bati na tayo, please? 🥺 </p>
+        </div>
+
+        <div class="buttons">
+            <button class="yes-btn" onclick="goToValentinePage()">Yes! 💖</button>
+            <button class="fake-no-btn" onclick="moveNoButton()">No! 😞</button>
+        </div>
+    </div>
+
+    <!-- Valentine's Question Page -->
+    <div id="valentinePage" style="display: none;">
+        <h1>Will You Be My Valentine? ❤️</h1>
+        <img class="heart" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Red_heart_icon.svg/1024px-Red_heart_icon.svg.png" alt="Heart">
+        <div class="message-box">
+            <p>heheheheh</p>
+            <p>bati na? baby mo na ba ako ulit:(( </p>
+            <p>Will you be my valentine, boo? ❤️</p>
+        </div>
+
+        <div class="buttons">
+            <button class="yes-btn" onclick="showThanks()">Yes!😁</button>
+        </div>
+    </div>
+
+    <script>
+        // Apology page: asks for forgiveness
+        function goToValentinePage() {
+            document.getElementById('apologyPage').style.display = 'none';
+            document.getElementById('valentinePage').style.display = 'block';
+        }
+
+        // Show thanks on clicking Yes on Valentine's page
+        function showThanks() {
+            alert("Yay! Kiss pls,yung may tunog. Watch tayo the gap series sa valentines😚");
+            location.reload(); // Reload to start again if needed
+        }
+
+        // Move the "No" button if clicked
+        function moveNoButton() {
+            var noButton = document.querySelector('.fake-no-btn');
+            noButton.style.position = 'absolute';
+            noButton.style.top = Math.random() * 300 + 'px'; // Random vertical movement
+            noButton.style.left = Math.random() * 300 + 'px'; // Random horizontal movement
+        }
+    </script>
+
+</body>
+</html>
